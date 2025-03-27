@@ -301,3 +301,17 @@ input[type="range"]::-moz-range-thumb {
   margin-top: -4px;
   margin-right: 5px;
 }
+
+.custom-message {
+  display: none;
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  user-select: none;
+}

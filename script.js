@@ -13,6 +13,7 @@ const speedBtn = document.querySelector(".speed-btn");
 const previewImg = document.querySelector(".preview-img");
 const thumbnailImg = document.querySelector(".thumbnail-img");
 const timelineContainer = document.querySelector(".timeline-container");
+const message = document.querySelector(".custom-message");
 
 document.addEventListener("keydown", (e) => {
   const tagName = document.activeElement.tagName.toLowerCase();
@@ -51,8 +52,20 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Disable Right Click
-document.addEventListener("contextmenu", function (e) {
+videoContainer.addEventListener("contextmenu", function (e) {
   e.preventDefault();
+
+  if (message) {
+    // Position the custom message at the click position
+    message.style.top = e.pageY + "px";
+    message.style.left = e.pageX + "px";
+    message.style.display = "block";
+  }
+});
+
+// Hide message when clicking anywhere
+document.addEventListener("click", function (e) {
+  message.style.display = "none";
 });
 
 // Play / Pause
